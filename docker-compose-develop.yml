@@ -1,0 +1,9 @@
+version: '3'
+services:
+  cog:
+    build: .
+    ports:
+      - "6767:6767"
+    command: develop
+    volumes:
+      - "./cog:/cog/cog"

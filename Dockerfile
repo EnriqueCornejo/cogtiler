@@ -1,8 +1,11 @@
 FROM python:3.6
 MAINTAINER Vizzuality Science Team info@vizzuality.com
 
+ENV CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 RUN apt-get update && apt-get install -yq \
-    libgdal-dev
+    libgdal-dev \
+    ca-certificates \
+    && apt-get clean
 
 WORKDIR /cog
 

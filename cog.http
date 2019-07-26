@@ -8,4 +8,8 @@ GET :api/cog/aHR0cDovL29pbi1ob3Rvc20uczMuYW1hem9uYXdzLmNvbS81YTk1ZjMyYzI1NTNlNjA
 #
 GET :api/cog/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3NreWRpcHBlci1jb2dzLzVkMmYxNWZjMzZkZGVlMDAwNTg0ZTI2Ny50aWY=/18/68350/98784
 #
-GET :api/cog/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3NreWRpcHBlci1jb2dzL2NvbG9yZWRfcmFzdGVyX2NvZy50aWY=/2/2/2
+GET :api/cog/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3NreWRpcHBlci1jb2dzL2NvbG9yZWRfcmFzdGVyX2NvZy50aWY=/18/68350/98784
+#
+https://storage.googleapis.com/skydipper-cogs/colored_raster_cog.tif
+
+curl -i -XGET http://0.0.0.0:6767/cog/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3NreWRpcHBlci1jb2dzL2NvbG9yZWRfcmFzdGVyX2NvZy50aWY=/18/68350/98784

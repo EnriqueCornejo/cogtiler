@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, abort
+from flask import Flask, request, send_file, abort, jsonify
 from rio_tiler import main
 from rio_tiler.utils import array_to_image
 from rio_tiler.profiles import img_profiles
@@ -34,3 +34,15 @@ def tile(b64url, x, y, z):
         as_attachment=False,
         attachment_filename='tile.jpg'
     )
+
+@app.route('/cog/<b64url>/',  strict_slashes=False, methods=['GET'])
+def metadata(b64url):
+    url = str(base64.b64decode(b64url).decode('utf-8'))
+    app.logger.debug(f"Getting metadata at url {url}")
+    try:
+        metadata = main.metadata(url)
+        app.logger.debug(metadata)
+    except Exception as e:
+        app.logger.debug(e)
+        return abort(500)
+    return jsonify(metadata)
